@@ -1,0 +1,142 @@
+/* ================= BASE ================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ================= TITLE ================= */
+h1 {
+    text-align: center;
+    color: #2b2d42;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+h3 {
+    margin-top: 25px;
+    color: #3a3a3a;
+}
+
+/* ================= MESSAGE ================= */
+.message {
+    background: #e8f5ff;
+    color: #0d6efd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th {
+    background: #0d6efd;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+    background: #f4f8ff;
+}
+
+/* ================= INPUTS ================= */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #d0d7de;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13,110,253,0.2);
+}
+
+/* ================= BUTTONS ================= */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+    margin: 2px;
+}
+
+/* ADD BUTTON */
+button[name="add_member"] {
+    background: #198754;
+    color: white;
+}
+
+button[name="add_member"]:hover {
+    background: #146c43;
+}
+
+/* UPDATE BUTTON */
+button[name="update_member"] {
+    background: #ffc107;
+    color: #000;
+}
+
+button[name="update_member"]:hover {
+    background: #e0a800;
+}
+
+/* DELETE BUTTON */
+button[name="delete_member"] {
+    background: #dc3545;
+    color: white;
+}
+
+button[name="delete_member"]:hover {
+    background: #bb2d3b;
+}
+
+/* EDIT BUTTON (table action) */
+button {
+    background: #6c757d;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* ================= HR ================= */
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+}
