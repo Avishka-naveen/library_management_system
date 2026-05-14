@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+body {
+    /* background: linear-gradient(135deg, #76e1ff 0%, #1e00ff 100%); */
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.sub-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    padding: 40px;
+    max-width: 1200px;
+    
+}
+
+.container .sub-container h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #0432ff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.container .sub-container p {
+    text-align: center;
+    color: #b2b2b2;
+    margin-bottom: 30px;
+}
+
+.left-card {
+    flex: 1;
+    max-width: 450px;
+    min-width: 280px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.right-card {
+    flex: 1;
+    max-width: 450px;
+    min-width: 280px;
+    text-align: center;
+}
+
+.login-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+    width: 100%;
+    
+}
+
+.input-box div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.input-box div:focus-within {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background: white;
+}
+
+.input-box i {
+    color: #000000;
+    font-size: 1.1rem;
+    width: 20px;
+}
+.input-box div:focus-within i {
+    color: blue;
+}
+.input-box div:focus-within {
+    border-color: blue;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    background: white;
+    transform: translateX(5px);
+}
+
+
+.input-box input {
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    
+}
+
+.input-box input::placeholder {
+    color: #bbb;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: rgb(0, 0, 255);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.bottom-section{
+    margin-top: 10px;
+}
+.bottom-section a {
+    color: #0432ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+    transition: color 0.3s ease;
+}
+
+
+
+@media (max-width: 1024px) {
+    .sub-container {
+        gap: 30px;
+        padding: 30px;
+    }
+    
+    .left-card, .right-card {
+        max-width: 380px;
+    }
+    
+    .container .sub-container h1 {
+        font-size: 2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .sub-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px;
+        border-radius: 15px;
+    }
+    
+    .left-card {
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .right-card {
+        max-width: 100%;
+        width: 100%;
+        order: -1; 
+    }
+    
+    .login-img {
+        max-width: 250px;
+    }
+    
+    .container .sub-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    .input-box {
+        gap: 15px;
+    }
+    
+    .input-box div {
+        padding: 5px 12px;
+    }
+    
+    .input-box input {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .sub-container {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .left-card {
+        padding: 5px;
+    }
+    
+    .container .sub-container h1 {
+        font-size: 1.5rem;
+    }
+    
+    .container .sub-container p {
+        font-size: 0.9rem;
+    }
+    
+    .login-img {
+        max-width: 200px;
+    }
+    
+    .input-box div {
+        padding: 5px 10px;
+    }
+    
+    .input-box i {
+        font-size: 0.9rem;
+    }
+    
+    .input-box input {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .sub-container {
+        padding: 15px;
+    }
+    
+    .container .sub-container h1 {
+        font-size: 1.3rem;
+    }
+    
+    .login-img {
+        max-width: 150px;
+    }
+    
+    .input-box div {
+        gap: 8px;
+    }
+    
+    .input-box i {
+        font-size: 0.8rem;
+        width: 16px;
+    }
+}
