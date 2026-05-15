@@ -6,6 +6,26 @@ $message = "";
 
 $result = $conn->query("SELECT * FROM bookborrower");
 $borrowCount=$result->num_rows;
+
+/* =========================
+   HELPER FUNCTIONS FOR VALIDATION
+========================= */
+function validateBookExists($conn, $book_id) {
+    $stmt = $conn->prepare("SELECT * FROM book WHERE book_id = ?");
+    $stmt->bind_param("s", $book_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->num_rows > 0;
+}
+
+function validateMemberExists($conn, $member_id) {
+    $stmt = $conn->prepare("SELECT * FROM member WHERE member_id = ?");
+    $stmt->bind_param("s", $member_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->num_rows > 0;
+}
+
 /* =========================
    ADD BORROW RECORD
 ========================= */
@@ -25,6 +45,14 @@ if (isset($_POST['submit'])) {
     }
     elseif (!preg_match('/^M\d{3}$/', $member_id)) {
         $message = "Invalid Member ID (M001)";
+    }
+    // ADDED: Check if Book ID exists in book table
+    elseif (!validateBookExists($conn, $book_id)) {
+        $message = "Error: Book ID '$book_id' does not exist in the Books table! Please add the book first.";
+    }
+    // ADDED: Check if Member ID exists in member table
+    elseif (!validateMemberExists($conn, $member_id)) {
+        $message = "Error: Member ID '$member_id' does not exist in the Members table! Please register the member first.";
     }
     else {
 
@@ -79,23 +107,41 @@ if (isset($_POST['update'])) {
     $member_id = $_POST['member_id'];
     $borrow_status = $_POST['borrow_status'];
 
-    $stmt = $conn->prepare("
-        UPDATE bookborrower 
-        SET book_id=?, member_id=?, borrow_status=? 
-        WHERE borrow_id=?
-    ");
+    // ADDED: Validate Book ID format
+    if (!preg_match('/^B\d{3}$/', $book_id)) {
+        $message = "Invalid Book ID (B001)";
+    }
+    // ADDED: Validate Member ID format
+    elseif (!preg_match('/^M\d{3}$/', $member_id)) {
+        $message = "Invalid Member ID (M001)";
+    }
+    // ADDED: Check if Book ID exists in book table
+    elseif (!validateBookExists($conn, $book_id)) {
+        $message = "Error: Book ID '$book_id' does not exist in the Books table!";
+    }
+    // ADDED: Check if Member ID exists in member table
+    elseif (!validateMemberExists($conn, $member_id)) {
+        $message = "Error: Member ID '$member_id' does not exist in the Members table!";
+    }
+    else {
+        $stmt = $conn->prepare("
+            UPDATE bookborrower 
+            SET book_id=?, member_id=?, borrow_status=? 
+            WHERE borrow_id=?
+        ");
 
-    $stmt->bind_param("ssss", 
-        $book_id, 
-        $member_id, 
-        $borrow_status, 
-        $borrow_id
-    );
+        $stmt->bind_param("ssss", 
+            $book_id, 
+            $member_id, 
+            $borrow_status, 
+            $borrow_id
+        );
 
-    if ($stmt->execute()) {
-        $message = "Record Updated Successfully";
-    } else {
-        $message = "Update Failed";
+        if ($stmt->execute()) {
+            $message = "Record Updated Successfully";
+        } else {
+            $message = "Update Failed";
+        }
     }
 }
 ?>
@@ -169,11 +215,11 @@ h2 { color: #0d6efd;
 <table class="table table-bordered mt-3">
 
 <tr>
-<th>Borrow ID</th>
-<th>Book ID</th>
-<th>Member ID</th>
-<th>Status</th>
-<th>Action</th>
+<th style="background-color: #0d6efd; color: white;">Borrow ID</th>
+<th style="background-color: #0d6efd; color: white;">Book ID</th>
+<th style="background-color: #0d6efd; color: white;">Member ID</th>
+<th style="background-color: #0d6efd; color: white;">Status</th>
+<th style="background-color: #0d6efd; color: white;">Action</th>
 </tr>
 
 <?php

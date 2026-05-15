@@ -69,7 +69,7 @@ table {
     overflow: hidden;
 }
 
-table th {
+.table th {
     background: #0d6efd;
     color: white;
     padding: 12px;
