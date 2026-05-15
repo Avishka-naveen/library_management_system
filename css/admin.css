@@ -1,0 +1,115 @@
+/* ================= CONTAINER ================= */
+.container {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: sans-serif;
+}
+
+/* ================= TITLE ================= */
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #111827;
+    font-weight: bolder;
+}
+.container h1 span {
+    color: #2563eb;
+    font-size: 50px;
+}
+
+/* ================= MESSAGE ================= */
+.message {
+    background: #dbeafe;
+    padding: 10px;
+    border-left: 5px solid #2563eb;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+table th {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+table tr:hover {
+    background: #f3f4f6;
+}
+
+/* ================= BUTTONS ================= */
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Edit button */
+button[onclick] {
+    background: #3b82f6;
+    color: white;
+}
+
+button[onclick]:hover {
+    background: #2563eb;
+}
+
+/* Delete button */
+button[name="delete_user"] {
+    background: #ef4444;
+    color: white;
+}
+
+button[name="delete_user"]:hover {
+    background: #dc2626;
+}
+
+/* Update button */
+button[name="update_user"] {
+    background: #f59e0b;
+    color: white;
+}
+
+button[name="update_user"]:hover {
+    background: #d97706;
+}
+
+/* ================= FORM ================= */
+form {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2563eb;
+}
