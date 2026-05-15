@@ -20,10 +20,18 @@
 
 /* MAIN CONTENT */
 .main-content {
+ 
     margin-left: 250px;
     padding: 20px;
     transition: 0.3s;
-   background: linear-gradient(135deg, #fdfdfd, #737373);
+
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('../assets/library.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* BRAND */
