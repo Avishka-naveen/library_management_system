@@ -1,0 +1,151 @@
+/* ================= GLOBAL ================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= TITLE ================= */
+h1 {
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #333;
+    margin-top: 25px;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th {
+    background: #0d6efd;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+    background: #f1f6ff;
+}
+
+/* ================= INPUT ================= */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #0d6efd;
+}
+
+/* ================= BUTTONS ================= */
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* ADD */
+button[name="add_book"],
+button[name="add_category"],
+button[name="add_fine"],
+button[name="submit"] {
+    background: #198754;
+    color: rgb(255, 255, 255);
+}
+
+button[name="add_book"]:hover,
+button[name="add_category"]:hover,
+button[name="add_fine"]:hover,
+button[name="submit"]:hover {
+    background: #146c43;
+}
+
+/* UPDATE */
+button[name="update_book"],
+button[name="update_category"],
+button[name="update_fine"],
+button[name="update"] {
+    background: #ffc107;
+    color: black;
+}
+
+button[name="update_book"]:hover,
+button[name="update_category"]:hover,
+button[name="update_fine"]:hover,
+button[name="update"]:hover {
+    background: #e0a800;
+}
+
+/* DELETE */
+button[name="delete_book"],
+button[name="delete_category"],
+button[name="delete_fine"],
+button[name="delete"] {
+    background: #dc3545;
+    color: white;
+}
+
+button[name="delete_book"]:hover,
+button[name="delete_category"]:hover,
+button[name="delete_fine"]:hover,
+button[name="delete"]:hover {
+    background: #b02a37;
+}
+
+/* EDIT BUTTON */
+button {
+    margin: 2px;
+}
+
+/* ================= MESSAGE ================= */
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    text-align: center;
+    background: #e7f3ff;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* ================= HR ================= */
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
